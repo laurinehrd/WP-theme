@@ -4,3 +4,190 @@ Author: Laurine
 Description: Thème simple avec un menu et une barre latérale
 Tags: HTML CSS JS
 */
+
+
+@font-face {
+font-family: 'Segoe UI Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Segoe UI Regular'), url('fonts/Segoe UI.woff') format('woff');}
+@font-face {
+font-family: 'Segoe UI Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Segoe UI Italic'), url('fonts/Segoe UI Italic.woff') format('woff');}
+@font-face {
+font-family: 'Segoe UI Bold';
+font-style: normal;
+font-weight: normal;
+src: local('Segoe UI Bold'), url('fonts/Segoe UI Bold.woff') format('woff');}
+@font-face {
+font-family: 'Segoe UI Bold Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Segoe UI Bold Italic'), url('fonts/Segoe UI Bold Italic.woff') format('woff');}
+
+:root{
+  --bluedark: #004989;
+  --bluelight: #B8CDE0;
+}
+html{
+  scroll-behavior: smooth;
+}
+nav{
+  border-bottom: 3px solid white;
+  border-radius: 1.8px;
+  font-size: 1.3rem;
+  font-family: 'Segoe UI Light';
+  /* color: white; */
+  /* list-style: none; */
+}
+/* ul{
+  list-style: none;
+} */
+a {
+  color: white;
+  text-decoration: none;
+}
+.menu_navigation li{
+  display: inline;
+  padding-left: 1rem;
+}
+a:hover{
+  color: var(--bluelight);
+}
+.img-header{
+  height: 100vh;
+}
+.title-header{
+  font-family: 'Segoe UI Black';
+  color: white;
+  font-size: 4rem;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.slogan{
+  font-family: 'Segoe UI Light';
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.buttons{
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Segoe UI Light';
+  font-size: 20rem;
+
+}
+.buttons a{
+  width: 8rem;
+  padding: 15px;
+  background-color: var(--bluedark);
+  border: none;
+  font-size: 1.3rem;
+}
+.buttons a:hover{
+  background-color: white;
+  color: var(--bluedark);
+}
+.section-info{
+  background-color: var(--bluelight);
+  height: 550px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.title-h2{
+  font-family: 'Segoe UI Bold';
+  font-size: 2.5rem;
+  color: white;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.info-p{
+  font-family: 'Segoe UI Light';
+  font-size: 2rem;
+  color: var(--bluedark);
+}
+.card{
+  margin: auto;
+  border-radius: 10px;
+}
+.card-title{
+  color: var(--bluedark);
+  font-family: 'Segoe UI Bold';
+  font-size: 1.5rem;
+}
+.section-posts{
+  height: 850px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.title-posts{
+  color: var(--bluedark);
+}
+.post-card{
+  padding: 2rem 3.5rem 2rem 3.5rem;
+}
+.section-posts a{
+  color: var(--bluelight);
+  font-family: 'Segoe UI Bold';
+}
+.section-posts a:hover{
+  color: var(--bluedark);
+}
+.button{
+  display: flex;
+  justify-content: center;
+}
+.button a{
+  font-family: 'Segoe UI Light';
+  background-color: var(--bluedark);
+  border: none;
+  color: white;
+}
+.button a:hover{
+  background-color: var(--bluelight);
+  color: var(--bluedark);
+}
+.soulignage{
+  border-bottom: 3px solid white;
+  border-radius: 1.8px;
+  width: 25%;
+  margin: auto;
+}
+.soulignage-blue{
+  border-bottom: 3px solid var(--bluelight);
+  border-radius: 1.8px;
+  width: 25%;
+  margin: auto;
+}
+.post-card{
+  border: 2px solid var(--bluedark);
+  border-radius: 0 0 10px 10px;
+  border-top: none;
+}
+.section-footer{
+  background-color: var(--bluedark);
+  height: 150px;
+}
+.section-footer img{
+  width: 20%;
+  padding-left: 1rem;
+}
+.social-media{
+  position: absolute;
+  right: 0;
+}
+.img-single-post{
+  width: 100%;
+  height: auto;
+}

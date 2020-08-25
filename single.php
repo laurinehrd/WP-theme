@@ -1,9 +1,26 @@
-<?php the_post_thumbnail();?>
 
-<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h2>
+    <p>
+      <img class="img-single-post" src="<?php //the_posts_thumbnail_url() ?>" alt="">
+    </p>
 
-<p class="date-author">Posted: <?php the_date(); ?> by <?php the_author(); ?></p>
+    <h1><?php the_title() ?></h1>
+    <?php the_content() ?>
 
-<?php the_content(); ?>
 
-<p class="postmetadata">Filed in: <?php the_category(); ?> | Tagged: <?php the_tags(); ?> | <a href="<?php comments_link(); ?>" title="Leave a comment">Comments</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php get_footer() ?>

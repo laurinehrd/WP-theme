@@ -2,20 +2,25 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <!-- <title><?php //echo bloginfo('name'); ?></title> -->
     <?php wp_head() ?>
   </head>
   <body>
 
     <div class="container">
-
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+      <nav class="navbar text-uppercase">
+        <div class="logo">
+          <a href="<?php echo home_url('/'); ?>"><?php echo the_custom_logo()?></a>
+        </div>
+        <div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a>
+                <?php wp_nav_menu( array (
+                'theme_location' => 'header',
+                'menu_class' => 'menu_navigation',
+              ) ); ?></a>
+            </li>
+          </ul>
         </div>
       </nav>
+    </div>
