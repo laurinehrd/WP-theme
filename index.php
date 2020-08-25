@@ -38,8 +38,7 @@ background-size: cover;
     <div class="row pt-4 d-flex justify-content-between">
       <div class="col-lg-4">
         <div class="card text-center py-4 ml-0">
-          <!-- <img src="images/beach.png" class="card-img-top w-25 mx-auto" alt="icone beach"> -->
-            <?php the_post_thumbnail( array( 100, 100 )); ?>
+          <img src="<?php echo get_template_directory_uri(); ?> /images/beach.png" class="card-img-top w-25 mx-auto" alt="icone beach">
           <div class="card-body">
             <h5 class="card-title">Title</h5>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae lacinia lorem. Maecenas posuere pellentesque euismod. </p>
@@ -48,7 +47,7 @@ background-size: cover;
       </div>
       <div class="col-lg-4">
         <div class="card text-center py-4">
-          <img src="images/iceberg.png" class="card-img-top w-25 mx-auto" alt="icone iceberg">
+          <img src="<?php echo get_template_directory_uri(); ?> /images/iceberg.png" class="card-img-top w-25 mx-auto" alt="icone iceberg">
           <div class="card-body">
             <h5 class="card-title">Title</h5>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae lacinia lorem. Maecenas posuere pellentesque euismod. </p>
@@ -57,7 +56,7 @@ background-size: cover;
       </div>
       <div class="col-lg-4">
         <div class="card text-center py-4 mr-0">
-          <img src="images/nature.png" class="card-img-top w-25 mx-auto" alt="icone nature">
+          <img src="<?php echo get_template_directory_uri(); ?> images/nature.png" class="card-img-top w-25 mx-auto" alt="icone nature">
           <div class="card-body">
             <h5 class="card-title">Title</h5>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae lacinia lorem. Maecenas posuere pellentesque euismod. </p>

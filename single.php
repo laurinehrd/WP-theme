@@ -1,10 +1,24 @@
+<div class="img-header">
 
-    <p>
-      <img class="img-single-post" src="<?php //the_posts_thumbnail_url() ?>" alt="">
-    </p>
+  <style>
+    .img-header{
+    background-image: url('<?php the_post_thumbnail_url() ?>');
+    background-size: cover;
+    }
+  </style>
 
-    <h1><?php the_title() ?></h1>
-    <?php the_content() ?>
+<?php get_header() ?>
+
+  <h1 class="title-single-post"><?php the_title() ?></h1>
+</div>
+
+
+  <div class="container my-5">
+
+    <p class="mt-5"><?php the_content() ?></p>
+
+  </div>
+
 
 
 
