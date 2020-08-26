@@ -1,51 +1,28 @@
-<?php get_header() ?>
-
-<h1><?php echo bloginfo('name'); ?></h1>
-<h2><?php echo bloginfo('description'); ?></h2>
-
-
+<?php get_header('home') ?>
 
 <div class="container">
-  <div class="row">
+    <div class="row">
+      <?php if (have_posts()) : ?>
+          <?php while(have_posts()) : the_post(); ?>
+            <div class="card" style="width: 18rem;">
+              <?php the_post_thumbnail('medium', ['class' => 'card-img-top', 'alt' => '', 'style' => 'height: auto;']) ?>
+                <div class="card-body">
+                  <h5 class="card-title"><?php the_title() ?></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><?php the_category() ?></h6>
+                    <p class="card-text">
+                      <?php the_excerpt() ?>
+                    </p>
+                    <a href="<?php the_permalink() ?>" class="card-link">Lire la suite</a>
+                    <br><br><p>Publié le <?php the_time('d/m/Y'); ?><?php if(!is_page()) : ?><?php endif; ?></p>
+                    <p>By <?php the_author() ?></p>
+                </div>
+            </div>
+          <?php endwhile ?>
 
-<?php
-
-// checks if there are any posts that match the query
-if (have_posts()) :
-
-  // If there are posts matching the query then start the loop
-  while ( have_posts() ) : the_post();
-
-    // the code between the while loop will be repeated for each post
-    ?>
-
-        <div class="col-md-6">
-          <?php the_post_thumbnail();?>
-
-          <h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h2>
-
-          <p class="date-author">Posted: <?php the_date(); ?> by <?php the_author(); ?></p>
-
-          <?php the_content(); ?>
-
-          <p class="postmetadata">Filed in: <?php the_category(); ?> | Tagged: <?php the_tags(); ?> | <a href="<?php comments_link(); ?>" title="Leave a comment">Comments</a></p>
-
-
-        </div>
-
-    <?php
-
-    // Stop the loop when all posts are displayed
- endwhile;
-
-// If no posts were found
-else :
-?>
-<p>Sorry no posts matched your criteria.</p>
-<?php
-endif;
-?>
-</div>
-</div>
+      <?php else : ?>
+          <h2>pas d'article</h2>
+      <?php endif; ?>
+    </div>
+  </div>
 
 <?php get_footer() ?>
