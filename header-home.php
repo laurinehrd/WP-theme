@@ -6,7 +6,7 @@
   </head>
   <body>
 
-  <header class="header-page">
+  <header>
     <div class="container">
       <nav class="navbar text-uppercase">
         <div class="logo">
@@ -28,7 +28,7 @@
   </header>
 
   <style>
-    .header-page{
+    header{
     background-image: url('<?php header_image() ?>');
     background-size: cover;
     }

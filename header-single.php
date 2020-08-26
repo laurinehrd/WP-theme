@@ -28,8 +28,9 @@
   </header>
 
   <style>
-    .header-page{
-    background-image: url('<?php header_image() ?>');
+    header{
+    background-image: url('<?php the_post_thumbnail_url() ?>');
     background-size: cover;
+    height: 100vh!important;
     }
   </style>

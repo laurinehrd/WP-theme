@@ -48,6 +48,16 @@ function themename_custom_header_setup() {
     );
     add_theme_support( 'custom-header', $args );
 }
+// function page_custom_page_setup() {
+//     $page = array(
+//         'default-image'      => get_template_directory_uri() . '/images/bg2.jpg',
+//         'width'              => 1000,
+//         'height'             => 250,
+//         'flex-width'         => true,
+//         'flex-height'        => true,
+//     );
+//     add_theme_support( 'custom-page', $page );
+// }
 
 function themename_custom_logo_setup() {
  $defaults = array(

@@ -56,8 +56,11 @@ a {
 a:hover{
   color: var(--bluelight);
 }
-.img-header{
+header{
   height: 100vh;
+}
+.header-page{
+  height: 10vh;
 }
 .title-header{
   font-family: 'Segoe UI Black';
@@ -147,12 +150,12 @@ a:hover{
 .post-card{
   padding: 2rem 3.5rem 2rem 3.5rem;
 }
-.section-posts a{
-  color: var(--bluelight);
+.card-title a{
+  color: var(--bluedark);
   font-family: 'Segoe UI Bold';
 }
-.section-posts a:hover{
-  color: var(--bluedark);
+.card-title a:hover{
+  color: var(--bluelight);
 }
 .button{
   display: flex;
@@ -200,4 +203,10 @@ a:hover{
 .img-single-post{
   width: 100%;
   height: auto;
+}
+.post-suite{
+  color: var(--bluelight);
+}
+.post-suite:hover{
+  color: var(--bluedark);
 }

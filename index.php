@@ -1,11 +1,4 @@
-<div class="img-header">
-  <style>
-.img-header{
-background-image: url('<?php header_image() ?>');
-background-size: cover;
-}
-</style>
-<?php get_header() ?>
+<?php get_header('home') ?>
 
 
   <h1 class="text-uppercase title-header"><?php echo bloginfo('name'); ?></h1>
@@ -16,7 +9,7 @@ background-size: cover;
     <a class="btn btn-primary" href="#infos" role="button">Infos</a>
   </div>
 
-</div>
+
 
 <!-- SECTION INFOS -->
 <section class="section-info" id="infos">
@@ -56,7 +49,7 @@ background-size: cover;
       </div>
       <div class="col-lg-4">
         <div class="card text-center py-4 mr-0">
-          <img src="<?php echo get_template_directory_uri(); ?> images/nature.png" class="card-img-top w-25 mx-auto" alt="icone nature">
+          <img src="<?php echo get_template_directory_uri(); ?> /images/nature.png" class="card-img-top w-25 mx-auto" alt="icone nature">
           <div class="card-body">
             <h5 class="card-title">Title</h5>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae lacinia lorem. Maecenas posuere pellentesque euismod. </p>
@@ -73,7 +66,7 @@ background-size: cover;
 
 
 
-
+<!-- SECTION POST -->
 
 <section class="section-posts">
 
@@ -81,10 +74,10 @@ background-size: cover;
 
     <h2 class="title-h2 title-posts text-center soulignage-blue">Posts</h2>
 <?php
-
+query_posts('showposts=2&cat='.$cat->cat_ID);
 // checks if there are any posts that match the query
 if (have_posts()) : ?>
-    <div class="row text-center pt-5">
+    <div class="row row-cols-6 row-cols-md-8 text-center mt-5">
       <?php
       // If there are posts matching the query then start the loop
         while ( have_posts() ) : the_post();
@@ -92,44 +85,45 @@ if (have_posts()) : ?>
         // the code between the while loop will be repeated for each post
         ?>
 
-
-      <div class="col-sm-6">
-        <div class="card w-75">
+      <div class="col-sm-6 pb-5">
+        <div class="card w-75 h-100">
           <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid', 'alt' => '']) ?>
           <div class="card-body post-card">
-            <p class="card-text"><?php the_category(['class' => 'text-decoration-none']) ?></p>
+            <!-- <p class="card-text"><?php the_category(['class' => 'text-decoration-none']) ?></p> -->
             <h5 class="card-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h5>
             <p class="card-text"><?php the_excerpt() ?></p>
             <a class="post-suite text-uppercase text-center" href="<?php the_permalink() ?>">Continue reading</a>
           </div>
         </div>
       </div>
+
+      <?php
+
+      // Stop the loop when all posts are displayed
+      endwhile;
+      ?>
+
+
+
+      <?php
+      // If no posts were found
+      else :
+      ?>
+      <p>Sorry no posts matched your criteria.</p>
+      <?php
+      endif;
+      ?>
+
     </div>
 
-  </div>
+    <span class="button py-5 mx-auto w-50"><a class="btn btn-primary btn-lg text-uppercase px-5" href="<?php bloginfo('post') ?>" role="button">See all posts</a></span>
 
+  </div>
 </section>
 
 
 
-    <?php
 
-    // Stop the loop when all posts are displayed
- endwhile;
- ?>
-
-
-  <span class="button py-5"><a class="btn btn-primary btn-lg text-uppercase px-5" href="<?= get_post_type_archive_link('post') ?>" role="button">See all posts</a></span>
-
-
-  <?php
-// If no posts were found
-else :
-?>
-<p>Sorry no posts matched your criteria.</p>
-<?php
-endif;
-?>
 
 
 
