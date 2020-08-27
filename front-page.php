@@ -28,34 +28,27 @@
       </div>
     </div>
 
-    <div class="row pt-4 d-flex justify-content-between">
-      <div class="col-lg-4">
-        <div class="card text-center py-4 ml-0">
-          <img src="<?php echo get_template_directory_uri(); ?> /images/beach.png" class="card-img-top w-25 mx-auto" alt="icone beach">
+    <div class="row row-cols-4 pt-4 mx-0 w-100">
+
+    <?php
+    query_posts(array(
+    'post_type' => 'information',
+    'showposts' => 3
+    ) );
+    ?>
+    <?php while (have_posts()) : the_post(); ?>
+
+      <div class="col-lg-4 px-5">
+        <div class="card text-center py-4 ml-0 h-100">
+          <?php the_post_thumbnail('post-thumbnail', ['class' => 'mx-auto img-infos', 'alt' => '']); ?>
           <div class="card-body">
-            <h5 class="card-title">Title</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae lacinia lorem. Maecenas posuere pellentesque euismod. </p>
+            <h5 class="card-title"><?php the_title(); ?></h5>
+            <p class="card-text"><?php the_content(); ?></p>
           </div>
         </div>
       </div>
-      <div class="col-lg-4">
-        <div class="card text-center py-4">
-          <img src="<?php echo get_template_directory_uri(); ?> /images/iceberg.png" class="card-img-top w-25 mx-auto" alt="icone iceberg">
-          <div class="card-body">
-            <h5 class="card-title">Title</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae lacinia lorem. Maecenas posuere pellentesque euismod. </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card text-center py-4 mr-0">
-          <img src="<?php echo get_template_directory_uri(); ?> /images/nature.png" class="card-img-top w-25 mx-auto" alt="icone nature">
-          <div class="card-body">
-            <h5 class="card-title">Title</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae lacinia lorem. Maecenas posuere pellentesque euismod. </p>
-          </div>
-        </div>
-      </div>
+
+    <?php endwhile; ?>
 
     </div>
 
@@ -72,17 +65,14 @@
 
   <div class="container">
 
-    <h2 class="title-h2 title-posts text-center soulignage-blue">Posts</h2>
+    <h2 class="title-h2 title-blue text-center soulignage-blue">Posts</h2>
 <?php
 query_posts('showposts=2&cat='.$cat->cat_ID);
-// checks if there are any posts that match the query
+
 if (have_posts()) : ?>
     <div class="row row-cols-6 row-cols-md-8 text-center mt-5">
       <?php
-      // If there are posts matching the query then start the loop
         while ( have_posts() ) : the_post();
-
-        // the code between the while loop will be repeated for each post
         ?>
 
       <div class="col-sm-6 pb-5">
