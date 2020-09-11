@@ -226,6 +226,14 @@ header{
 .post-suite:hover{
   color: var(--bluedark);
 }
+.category a{
+  color: var(--bluelight);
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+.category a:hover{
+  color: var(--bluedark);
+}
 .section-footer{
   background-color: var(--bluedark);
   height: 18vh;
@@ -278,3 +286,25 @@ header{
   background-color: rgba(0, 73, 137, 0.2);
   border-radius: 5px;
 }
+.bg-category{
+  background-color: var(--bluelight);
+  height: 300px;
+}
+.title-category{
+  text-align: center;
+}
+.title-category a{
+  color: var(--bluedark);
+}
+.title-category ul{
+    list-style: none;
+}
+
+
+/* @media (min-width: 768px){
+.section-info{
+  background-size: 1165px;
+}
+
+
+} */

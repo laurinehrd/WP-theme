@@ -69,13 +69,6 @@ register_sidebar( array(
 	'name' => 'Blog',
 ) );
 
-// function mytheme_setup_theme_supported_features() {
-//   add_theme_support( 'editor-color-palette',
-//     '#004989',
-//     '#B8CDE0',
-//   );
-// }
-
 
 function capitaine_register_post_types() {
   // CPT Portfolio
@@ -142,7 +135,6 @@ add_filter('nav_menu_css_class', 'montheme_menu_class');
 add_filter('nav_menu_link_attributes', 'montheme_menu_link_class');
 add_action( 'after_setup_theme', 'themename_custom_header_setup' );
 add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
-// add_action( 'after_setup_theme', 'mytheme_setup_theme_supported_features');
 add_action( 'init', 'capitaine_register_post_types' );
 add_action( 'init', 'infos_custom_post_type' );
 

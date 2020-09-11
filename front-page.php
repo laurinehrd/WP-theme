@@ -38,7 +38,7 @@
     ?>
     <?php while (have_posts()) : the_post(); ?>
 
-      <div class="col-lg-4 px-5">
+      <div class="col-lg-4 col-sm-12 px-5">
         <div class="card text-center py-4 ml-0 h-100">
           <?php the_post_thumbnail('post-thumbnail', ['class' => 'mx-auto img-infos', 'alt' => '']); ?>
           <div class="card-body">
@@ -79,7 +79,7 @@ if (have_posts()) : ?>
         <div class="card w-75 h-100">
           <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid', 'alt' => '']) ?>
           <div class="card-body post-card">
-            <!-- <p class="card-text"><?php the_category(['class' => 'text-decoration-none']) ?></p> -->
+            <p class="card-text category"><?php the_category(['class' => 'name-category text-decoration-none']) ?></p>
             <h5 class="card-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h5>
             <p class="card-text"><?php the_excerpt() ?></p>
             <a class="post-suite text-uppercase text-center" href="<?php the_permalink() ?>">Continue reading</a>
